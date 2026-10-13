@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberTrace - CTI Dashboard</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Custom CyberTrace Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="dashboard">
+
+    <!-- Top Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-cybertrace sticky-top">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand" href="dashboard.html">
+                <i class="bi bi-shield-shaded"></i> CyberTrace
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="dashboard.html"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="techniques.html"><i class="bi bi-crosshair"></i> Techniques</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tactics.html"><i class="bi bi-kanban"></i> Tactics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="software.html"><i class="bi bi-terminal"></i> Software</a></li>
+                    <li class="nav-item"><a class="nav-link" href="groups.html"><i class="bi bi-people"></i> Groups</a></li>
+                    <li class="nav-item"><a class="nav-link" href="campaigns.html"><i class="bi bi-flag"></i> Campaigns</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mitigations.html"><i class="bi bi-shield-check"></i> Mitigations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="relationships.html"><i class="bi bi-diagram-3"></i> Relationships</a></li>
+                    <li class="nav-item"><a class="nav-link" href="analytics.html"><i class="bi bi-graph-up"></i> Analytics</a></li>
+                </ul>
+
+                <!-- Quick Search -->
+                <form class="d-flex me-3" id="globalSearchForm">
+                    <div class="input-group">
+                        <input class="form-control form-control-sm" type="search" placeholder="Search technique or ID..." id="globalSearchInput">
+                        <button class="btn btn-outline-light btn-sm" type="submit"><i class="bi bi-search"></i></button>
+                    </div>
+                </form>
+
+                <div class="d-flex align-items-center">
+                    <span class="badge bg-primary text-white me-3 d-none d-md-inline-block">Analyst Mode</span>
+                    <a href="index.html" class="btn btn-sm btn-outline-danger"><i class="bi bi-box-arrow-right"></i> Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container-fluid px-4">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h1 class="page-title">Threat Intelligence Executive Dashboard</h1>
+                    <p class="page-subtitle">Real-time telemetry and incident correlation based on the MITRE ATT&CK Enterprise Matrix</p>
+                </div>
+                
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="container-fluid px-4 pb-5">
+        
+        <!-- Key Metrics Cards Row -->
+        <div class="row g-3 mb-4">
+            <div class="col-sm-6 col-md-4 col-xl-2">
+                <div class="stat-card">
+                    <div class="d-flex justify-content-between">
+                        <span class="stat-label">Techniques</span>
+                        <div class="stat-icon bg-primary bg-opacity-10 text-primary"><i class="bi bi-crosshair"></i></div>
+                    </div>
+                    <div class="stat-value" id="statTechniques">697</div>
+                    <small class="text-muted">414 Core, 283 Sub</small>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-xl-2">
+                <div class="stat-card">
+                    <div class="d-flex justify-content-between">
+                        <span class="stat-label">Tactics</span>
+                        <div class="stat-icon bg-info bg-opacity-10 text-info"><i class="bi bi-kanban"></i></div>
+                    </div>
+                    <div class="stat-value" id="statTactics">15</div>
+                    <small class="text-muted">Attack Lifecycle Phases</small>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-xl-2">
+                <div class="stat-card">
+                    <div class="d-flex justify-content-between">
+                        <span class="stat-label">Software</span>
+                        <div class="stat-icon bg-warning bg-opacity-10 text-warning"><i class="bi bi-terminal"></i></div>
+                    </div>
+                    <div class="stat-value" id="statSoftware">825</div>
+                    <small class="text-muted">680 Malware, 145 Tools</small>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-xl-2">
+                <div class="stat-card">
+                    <div class="d-flex justify-content-between">
+                        <span class="stat-label">Threat Groups</span>
+                        <div class="stat-icon bg-danger bg-opacity-10 text-danger"><i class="bi bi-people"></i></div>
+                    </div>
+                    <div class="stat-value" id="statGroups">176</div>
+                    <small class="text-muted">Tracked APT Actors</small>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-xl-2">
+                <div class="stat-card">
+                    <div class="d-flex justify-content-between">
+                        <span class="stat-label">Campaigns</span>
+                        <div class="stat-icon bg-secondary bg-opacity-10 text-secondary"><i class="bi bi-flag"></i></div>
+                    </div>
+                    <div class="stat-value" id="statCampaigns">56</div>
+                    <small class="text-muted">Bounded Operations</small>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-xl-2">
+                <div class="stat-card">
+                    <div class="d-flex justify-content-between">
+                        <span class="stat-label">Relationships</span>
+                        <div class="stat-icon bg-success bg-opacity-10 text-success"><i class="bi bi-diagram-3"></i></div>
+                    </div>
+                    <div class="stat-value" id="statRelationships">20,628</div>
+                    <small class="text-muted">Threat Graph Edges</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tables Row -->
+        <div class="row g-4">
+            <!-- Active Threat Groups -->
+            <div class="col-lg-6">
+                <div class="card card-table h-100">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <span><i class="bi bi-people text-danger me-2"></i> High-Profile Threat Actors</span>
+                        <a href="groups.html" class="btn btn-sm btn-outline-primary">View All</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-custom">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Group Name</th>
+                                    <th>Known Aliases</th>
+                                    <th>Techniques</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="dashboardGroupsTable">
+                                <!-- Populated dynamically by script.js -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Prominent Techniques -->
+            <div class="col-lg-6">
+                <div class="card card-table h-100">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <span><i class="bi bi-crosshair text-primary me-2"></i> Frequently Observed Attack Techniques</span>
+                        <a href="techniques.html" class="btn btn-sm btn-outline-primary">View All</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-custom">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Technique Name</th>
+                                    <th>Tactic</th>
+                                    <th>Hierarchy</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="dashboardTechniquesTable">
+                                <!-- Populated dynamically by script.js -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container-fluid px-4 text-center">
+            CyberTrace Platform &copy; 2026 
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom CyberTrace Script -->
+    <script src="js/script.js"></script>
+</body>
+</html>

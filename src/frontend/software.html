@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberTrace - Malware & Tools</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Custom CyberTrace Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="software">
+
+    <!-- Top Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-cybertrace sticky-top">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand" href="dashboard.html">
+                <i class="bi bi-shield-shaded"></i> CyberTrace
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="techniques.html"><i class="bi bi-crosshair"></i> Techniques</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tactics.html"><i class="bi bi-kanban"></i> Tactics</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="software.html"><i class="bi bi-terminal"></i> Software</a></li>
+                    <li class="nav-item"><a class="nav-link" href="groups.html"><i class="bi bi-people"></i> Groups</a></li>
+                    <li class="nav-item"><a class="nav-link" href="campaigns.html"><i class="bi bi-flag"></i> Campaigns</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mitigations.html"><i class="bi bi-shield-check"></i> Mitigations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="relationships.html"><i class="bi bi-diagram-3"></i> Relationships</a></li>
+                    <li class="nav-item"><a class="nav-link" href="analytics.html"><i class="bi bi-graph-up"></i> Analytics</a></li>
+                </ul>
+
+                <div class="d-flex align-items-center">
+                    <a href="index.html" class="btn btn-sm btn-outline-danger"><i class="bi bi-box-arrow-right"></i> Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container-fluid px-4">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h1 class="page-title"><i class="bi bi-terminal text-primary"></i> Adversary Software Knowledge Base</h1>
+                    <p class="page-subtitle">Malicious binaries, remote access tools (RATs), and dual-use administrative utilities</p>
+                </div>
+                <div>
+                    <span class="badge bg-primary fs-6">825 Software Entities</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="container-fluid px-4 pb-5">
+
+        <!-- Search & Filter Bar -->
+        <div class="filter-bar shadow-sm">
+            <div class="row g-3 align-items-center">
+                <div class="col-md-8">
+                    <label class="form-label small fw-bold text-muted mb-1">Search Software</label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-light"><i class="bi bi-search"></i></span>
+                        <input type="text" class="form-control" id="softwareSearch" placeholder="Search by Software ID (e.g. S0002) or title (e.g. Mimikatz)...">
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label small fw-bold text-muted mb-1">Classification Type</label>
+                    <select class="form-select" id="softwareTypeFilter">
+                        <option value="all">All Classifications</option>
+                        <option value="malware">Malware Only</option>
+                        <option value="tool">Tools Only</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Software Table Card -->
+        <div class="card card-table">
+            <div class="table-responsive">
+                <table class="table table-custom">
+                    <thead>
+                        <tr>
+                            <th style="width: 120px;">Software ID</th>
+                            <th>Software Name</th>
+                            <th style="width: 140px;">Type</th>
+                            <th>Technical Overview</th>
+                            <th style="width: 160px;">Techniques Implemented</th>
+                        </tr>
+                    </thead>
+                    <tbody id="softwareTableBody">
+                        <!-- Populated dynamically by script.js -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container-fluid px-4 text-center">
+            CyberTrace Platform &copy; 2026 
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom CyberTrace Script -->
+    <script src="js/script.js"></script>
+</body>
+</html>

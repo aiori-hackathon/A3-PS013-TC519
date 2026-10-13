@@ -1,0 +1,273 @@
+/* ==========================================================================
+   CYBERTRACE - Cyber Threat Intelligence Platform
+   Frontend Stylesheet (Bootstrap 5 Enhancements)
+   Academic Level: Second-Year Undergraduate DBMS Academic Project
+   ========================================================================== */
+
+:root {
+    --ct-primary: #0f172a;       /* Dark slate navy */
+    --ct-primary-light: #1e293b; /* Sidebar / card header navy */
+    --ct-accent: #2563eb;        /* Cybersecurity royal blue */
+    --ct-accent-hover: #1d4ed8;
+    --ct-success: #10b981;
+    --ct-warning: #f59e0b;
+    --ct-danger: #ef4444;
+    --ct-bg-light: #f8fafc;
+    --ct-text-main: #334155;
+    --ct-border: #e2e8f0;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: var(--ct-text-main);
+    background-color: var(--ct-bg-light);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================================================
+   Navigation Bar & Brand
+   ========================================================================== */
+.navbar-cybertrace {
+    background-color: var(--ct-primary) !important;
+    border-bottom: 2px solid var(--ct-accent);
+}
+
+.navbar-cybertrace .navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #ffffff !important;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.navbar-cybertrace .navbar-brand i {
+    color: #60a5fa;
+}
+
+.navbar-cybertrace .nav-link {
+    color: #cbd5e1 !important;
+    font-weight: 500;
+    font-size: 0.92rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    transition: all 0.15s ease-in-out;
+}
+
+.navbar-cybertrace .nav-link:hover,
+.navbar-cybertrace .nav-link.active {
+    color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================================================
+   Page Header & Breadcrumbs
+   ========================================================================== */
+.page-header {
+    background: #ffffff;
+    border-bottom: 1px solid var(--ct-border);
+    padding: 1.25rem 0;
+    margin-bottom: 1.5rem;
+}
+
+.page-title {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--ct-primary);
+    margin: 0;
+}
+
+.page-subtitle {
+    font-size: 0.88rem;
+    color: #64748b;
+    margin: 0;
+}
+
+/* ==========================================================================
+   Dashboard Metric Cards
+   ========================================================================== */
+.stat-card {
+    background: #ffffff;
+    border: 1px solid var(--ct-border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    height: 100%;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card .stat-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+}
+
+.stat-card .stat-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--ct-primary);
+    line-height: 1.2;
+    margin-top: 0.5rem;
+}
+
+.stat-card .stat-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #64748b;
+}
+
+/* ==========================================================================
+   Tables & Data Presentation
+   ========================================================================== */
+.card-table {
+    border: 1px solid var(--ct-border);
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.card-table .card-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--ct-border);
+    padding: 1rem 1.25rem;
+    font-weight: 600;
+    color: var(--ct-primary);
+}
+
+.table-custom {
+    margin-bottom: 0;
+}
+
+.table-custom th {
+    background-color: #f1f5f9;
+    color: #475569;
+    font-weight: 600;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-top: none;
+    padding: 0.75rem 1rem;
+}
+
+.table-custom td {
+    padding: 0.85rem 1rem;
+    vertical-align: middle;
+    font-size: 0.9rem;
+    border-color: #f1f5f9;
+}
+
+.table-custom tr:hover td {
+    background-color: #f8fafc;
+}
+
+/* ==========================================================================
+   Badges & Tags
+   ========================================================================== */
+.badge-tech-id {
+    font-family: 'Consolas', monospace;
+    font-size: 0.85rem;
+    background-color: #e2e8f0;
+    color: #1e293b;
+    padding: 0.35rem 0.55rem;
+    font-weight: 600;
+}
+
+.badge-malware {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fca5a5;
+}
+
+.badge-tool {
+    background-color: #dbeafe;
+    color: #1d4ed8;
+    border: 1px solid #93c5fd;
+}
+
+.badge-subtechnique {
+    background-color: #fef3c7;
+    color: #b45309;
+    border: 1px solid #fde68a;
+}
+
+/* ==========================================================================
+   Search & Filter Bar
+   ========================================================================== */
+.filter-bar {
+    background: #ffffff;
+    border: 1px solid var(--ct-border);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+/* ==========================================================================
+   Login Page Styling
+   ========================================================================== */
+.login-body {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 420px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.login-header {
+    background: var(--ct-primary);
+    color: #ffffff;
+    padding: 2rem 1.5rem 1.5rem;
+    text-align: center;
+    border-bottom: 3px solid var(--ct-accent);
+}
+
+.login-header h3 {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.25rem;
+}
+
+.login-header p {
+    color: #94a3b8;
+    font-size: 0.88rem;
+    margin: 0;
+}
+
+.login-body-content {
+    padding: 2rem 1.75rem;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer {
+    margin-top: auto;
+    background-color: #ffffff;
+    border-top: 1px solid var(--ct-border);
+    padding: 1rem 0;
+    font-size: 0.85rem;
+    color: #64748b;
+}
